@@ -5,7 +5,7 @@ variable "aws_region" {
   
 }
 
-variable "enviroment_name" {
+variable "environment_name" {
   description = "Enviroment name used in resource names and tags"
   type = string
   default = "dev"
