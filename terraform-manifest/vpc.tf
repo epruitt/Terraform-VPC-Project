@@ -40,9 +40,19 @@ resource "aws_eip" "nat" {
  tags = merge(var.tags,{Name = "${var.environment_name}-nat-eip"}) 
 }
 #Nat Gateway
+resource "aws_nat_gateway" "nat" {
+  depends_on = [aws_internet_gateway.igw]
+  allocation_id = aws_eip.nat.id
+  subnet_id = values(aws_subnet.public)[0].id
+  tags = merge(var.tags,{Name = "${var.environment_name}-nat-gateway"}) 
+}
+
+#Public Route Table
 
 
-#Route table
+#Private Roubte Table
 
+
+#Private Route Table Association to Private Subnet
 
 
