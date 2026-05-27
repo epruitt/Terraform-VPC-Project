@@ -63,7 +63,7 @@ cd Terraform-VPC-Project/terraform-manifest
 terraform init
 ```
 
-### 3. Initialize Terraform
+### 3. Validate Terraform
 
 ```bash
 terraform validate
