@@ -1,6 +1,3 @@
-raw
-Readme · MD
-
 # Terraform VPC Project
 
 A Terraform-based Infrastructure as Code (IaC) project for provisioning an AWS Virtual Private Cloud (VPC) and associated networking resources.
@@ -21,7 +18,7 @@ Terraform-VPC-Project/
     ├── version.tf           # Defines required Terraform version and AWS provider block
     ├── variables.tf      # Declares input variables used throughout the config
     ├── outputs.tf        # Defines output values like VPC ID, subnet IDs
-    └── vpc.tf  # Variable values (environment-specific)
+    └── vpc.tf  # Main resource block that provisions the AWS VPC and subnets
     └── datasources-and-locals.tf  # Contains AWS region data source and local values
 ```
 
