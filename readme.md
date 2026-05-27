@@ -18,7 +18,7 @@ Terraform-VPC-Project/
     ├── version.tf           # Defines required Terraform version and AWS provider block
     ├── variables.tf      # Declares input variables used throughout the config
     ├── outputs.tf        # Defines output values like VPC ID, subnet IDs
-    └── vpc.tf  # Main resource block that provisions the AWS VPC and subnets
+    ├── vpc.tf  # Main resource block that provisions the AWS VPC and subnets
     └── datasources-and-locals.tf  # Contains AWS region data source and local values
 ```
 
