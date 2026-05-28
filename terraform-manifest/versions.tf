@@ -7,7 +7,20 @@ terraform {
     
     }
   }
+
+  #Remote Backend
+  backend "s3"{
+    bucket = "tfstate-dev-us-east-2-x6n4tn"
+    key    = "vpc/dev/terraform.tfstate"
+    region = "us-east-2"
+    encrypt = true
+    use_lockfile = true
+
+  }
+
 }
+
+
 
 provider "aws" {
   region = var.aws_region
