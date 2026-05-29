@@ -8,6 +8,8 @@ A Terraform-based Infrastructure as Code (IaC) project for provisioning an AWS V
 
 This project uses [Terraform](https://www.terraform.io/) to define and deploy a production-ready AWS VPC environment. All infrastructure is declared as code using HashiCorp Configuration Language (HCL), enabling consistent, repeatable, and version-controlled cloud deployments.
 
+![alt text](<terraform vpc network diagram.png>)
+
 ---
 
 ## Repository Structure
