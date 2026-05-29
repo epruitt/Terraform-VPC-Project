@@ -17,16 +17,16 @@ Terraform-VPC-Project/
 └── terraform-manifest/
    ├── modules/
 │   └── vpc/
-│       ├── datasources-and-locals.tf #Contains data blocks and locals
-│       ├── main.tf #Core VPC resource definitions
-│       ├── outputs.tf #Outputs exported by the module
-│       └──variables.tf #Inputs required by the VPC module
+│       ├── datasources-and-locals.tf
+│       ├── main.tf
+│       ├── outputs.tf
+│       └──variables.tf
 │
-├── c1-versions.tf #Same — Provider & required Terraform versions
-├── c2-variables.tf #Same — Root-level variables passed to the module
-├── c3-vpc.tf #Split into reusable VPC logic inside the module
-├── c4-outputs.tf #Split — Module exports and root-level passthrough
-├── terraform.tfvars #Same — environment-specific values for root module
+├── c1-versions.tf
+├── c2-variables.tf
+├── c3-vpc.tf
+├── c4-outputs.tf
+├── terraform.tfvars
 └── README.md
 ```
 
