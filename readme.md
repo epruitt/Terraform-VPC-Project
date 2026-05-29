@@ -15,11 +15,19 @@ This project uses [Terraform](https://www.terraform.io/) to define and deploy a 
 ```
 Terraform-VPC-Project/
 └── terraform-manifest/
-    ├── version.tf           # Defines required Terraform version and AWS provider block
-    ├── variables.tf      # Declares input variables used throughout the config
-    ├── outputs.tf        # Defines output values like VPC ID, subnet IDs
-    ├── vpc.tf  # Main resource block that provisions the AWS VPC and subnets
-    └── datasources-and-locals.tf  # Contains AWS region data source and local values
+   ├── modules/
+│   └── vpc/
+│       ├── datasources-and-locals.tf #Contains data blocks and locals
+│       ├── main.tf #Core VPC resource definitions
+│       ├── outputs.tf #Outputs exported by the module
+│       └──variables.tf #Inputs required by the VPC module
+│
+├── c1-versions.tf #Same — Provider & required Terraform versions
+├── c2-variables.tf #Same — Root-level variables passed to the module
+├── c3-vpc.tf #Split into reusable VPC logic inside the module
+├── c4-outputs.tf #Split — Module exports and root-level passthrough
+├── terraform.tfvars #Same — environment-specific values for root module
+└── README.md
 ```
 
 ---
@@ -97,7 +105,7 @@ Key input variables can be customized in `terraform.tfvars` or passed via the co
 
 | Variable         | Description                    | Default        |
 | ---------------- | ------------------------------ | -------------- |
-| `region`         | AWS region to deploy resources | `us-east-1`    |
+| `region`         | AWS region to deploy resources | `us-east-2`    |
 | `vpc_cidr`       | CIDR block for the VPC         | `10.0.0.0/16`  |
 | `public_subnet`  | CIDR for the public subnet     | `10.0.0.0/24`  |
 | `private_subnet` | CIDR for the private subnet    | `10.0.10.0/24` |
